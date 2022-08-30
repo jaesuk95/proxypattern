@@ -1,9 +1,6 @@
 package com.example.proxypattern.decorator;
 
-import com.example.proxypattern.decorator.code.Component;
-import com.example.proxypattern.decorator.code.DecoratorPatternClient;
-import com.example.proxypattern.decorator.code.MessageDecorator;
-import com.example.proxypattern.decorator.code.RealComponent;
+import com.example.proxypattern.decorator.code.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +23,19 @@ public class DecoratorPatternTest {
 
         DecoratorPatternClient client =
                 new DecoratorPatternClient(messageDecorator);
+
+        client.execute();
+    }
+
+    @Test
+    void decorator2() {
+        Component realComponent = new RealComponent();
+
+        MessageDecorator messageDecorator = new MessageDecorator(realComponent);
+
+        Component timeDecorator = new TimeDecorator(messageDecorator);
+
+        DecoratorPatternClient client = new DecoratorPatternClient(timeDecorator);
 
         client.execute();
     }

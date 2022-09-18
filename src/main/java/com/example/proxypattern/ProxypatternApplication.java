@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Import;
                                 // 일반적으로 @Configuration 같은 설정 파일을 등록할 때 사용하지만, 스프링 빈을 등록할 떄도 사용할 수 있다.
 
 //@Import({AppV1Config.class,AppV2Config.class})
-//@Import(InterfaceProxyConfig.class)
-@Import(ConcreteProxyConfig.class)
+@Import(InterfaceProxyConfig.class)
+//@Import(ConcreteProxyConfig.class)
 @SpringBootApplication(scanBasePackages = "com.example.proxypattern.app")
 //@SpringBootApplication(scanBasePackages = "com.example.proxypattern.app")
 public class ProxypatternApplication {
